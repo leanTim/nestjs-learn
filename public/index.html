@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@0.24.0/dist/axios.min.js"></script>
+    <!-- <script src="https://unpkg.com/qs@6.10.2/dist/qs.js"></script> -->
+</head>
+<body>
+    <!-- <h1>THIS IS INDEX</h1> -->
+    <script>
+
+        async function urlParam() {
+            const res = await axios.get('/api/peoson/1');
+            console.log(res);            
+        }
+        // urlParam()
+
+        // async function query () {
+        //     const res = await axios.get('api/peoson/find', {
+        //         params: {
+        //             name: 'Noone',
+        //             age: 18
+        //         }
+        //     })
+        //     console.log(res)
+        // }
+        async function query() {
+            const res = await axios.get('/api/peoson/find', {
+                params: {
+                    name: '光',
+                    age: 20
+                }
+            });
+            console.log(res);            
+        }
+        query()
+
+        // async function formUrlEncode () {
+        //     const res = await axios.post('/api/peoson', qs.stringfy({
+        //         name: 'Noone',
+        //         age: 18
+        //     }), {
+        //         headers: {'content-type': 'application/x-www-form-urlencoded'}
+        //     })
+        //     console.log(res, 'res request send')
+        // }
+
+        // formUrlEncode()
+        async function json () {
+            const res = await axios.post('/api/peoson', {
+                name: 'noone',
+                age: 18
+            })
+
+            console.log(res)
+        }
+
+        json()
+    </script>
+</body>
+</html>
